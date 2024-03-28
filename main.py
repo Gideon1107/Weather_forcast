@@ -30,19 +30,18 @@ def fetch_weather():
     weather_data = weather_response.json()
     weather_description = weather_data['weather'][0]['description']
     temp = round(weather_data['main']['temp'] - 273.15)
-    canvas.itemconfig(weather_info, text=f"       {location.title()}\n{weather_description.title()}, {temp}°C")
+    canvas.itemconfig(weather_info, text=f"{location.title()}\n{weather_description.title()}, {temp}°C")
 
 
 
-
+#--------------------UI-------------------------------#
 FONT= ("corbel", 14, "bold")
 
 window = Tk()
 window.title("Weather Forcast")
-window.geometry("400x250")
+window.geometry("400x250+500+300")
 window.iconbitmap("")
 window.config(padx=20, pady=20, bg="white")
-
 
 
 #Label
@@ -60,7 +59,7 @@ search_button.grid(column=1, row=1)
 
 
 canvas = Canvas(width=350, height=150, bg="white", highlightthickness=0)
-weather_info = canvas.create_text(175,75, text="Weather information goes here", fill="black", font=("corbel", 24), width=330)
+weather_info = canvas.create_text(175,75, text="", fill="black", font=("corbel", 24), width=330, anchor="center", justify="center")
 canvas.grid(column=0, row=2, columnspan=2, sticky="W")
 
 
