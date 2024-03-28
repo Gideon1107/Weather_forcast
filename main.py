@@ -1,10 +1,11 @@
 import requests
 from tkinter import *
+import os
 
 GEO_ENDPOINT = "http://api.openweathermap.org/geo/1.0/direct"
 WEATHER_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather"
 
-API_KEY = "82ffb21c8c4b35a4d00eda212c9e747e"
+API_KEY = os.environ.get("API_KEY")
 
 
 
